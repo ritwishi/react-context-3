@@ -1,6 +1,6 @@
 import {Component} from 'react'
 
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
+import {HashRouter, Route, Switch, Redirect} from 'react-router-dom'
 
 import CartContext from './context/CartContext'
 
@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     const {cartList} = this.state
     return (
-      <BrowserRouter>
+      <HashRouter>
         <CartContext.Provider
           value={{
             cartList,
@@ -50,7 +50,7 @@ class App extends Component {
             <Redirect to="not-found" />
           </Switch>
         </CartContext.Provider>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
